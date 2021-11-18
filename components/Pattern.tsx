@@ -1,5 +1,6 @@
 import { Circle, Grid } from "@chakra-ui/layout";
 import { map } from "ramda";
+import { useColorModeValue } from "@chakra-ui/color-mode";
 
 type props = {
   id?: string;
@@ -11,6 +12,11 @@ type props = {
 
 function Pattern(props: props) {
   const { id, array, isOption = false, isSelected = false, onClick } = props;
+  const color = useColorModeValue("#000", "#fff");
+  const optionColor = useColorModeValue(
+    "var(--chakra-colors-gray-100)",
+    "var(--chakra-colors-whiteAlpha-200)"
+  );
 
   function handleOnClick() {
     if (onClick && id) {
@@ -23,7 +29,7 @@ function Pattern(props: props) {
       return "#4f44e0";
     }
     if (isOption) {
-      return "#f6f6f6";
+      return optionColor;
     }
     return "transparent";
   }
@@ -37,7 +43,7 @@ function Pattern(props: props) {
       borderStyle="solid"
       borderWidth="2px"
       cursor={isOption ? "pointer" : "default"}
-      backgroundColor={isOption ? "#f6f6f6" : "transparent"}
+      backgroundColor={isOption ? optionColor : "transparent"}
       borderColor={getBorderColor()}
       onClick={handleOnClick}
     >
@@ -45,10 +51,16 @@ function Pattern(props: props) {
         return map((patt) => {
           if (patt === 0) {
             return (
-              <Circle border="2px solid #000" height="20px" width="20px" />
+              <Circle
+                borderWidth="2px"
+                borderStyle="solid"
+                borderColor={color}
+                height="20px"
+                width="20px"
+              />
             );
           }
-          return <Circle backgroundColor="#000" height="20px" width="20px" />;
+          return <Circle backgroundColor={color} height="20px" width="20px" />;
         }, item);
       }, array)}
     </Grid>
