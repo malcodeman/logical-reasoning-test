@@ -44,20 +44,27 @@ function Form(props: props) {
 
   return (
     <Flex flexDirection="column">
-      <Grid templateColumns="repeat(4, 1fr)" gridColumnGap="4">
+      <Grid
+        templateColumns={["repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]}
+        gridColumnGap="4"
+      >
         {map(
           (item) => (
-            <Pattern array={item.array} />
+            <Pattern key={item.id} array={item.array} />
           ),
           sequence
         )}
         {renderSelected()}
       </Grid>
       <Divider marginY="6" />
-      <Grid templateColumns="repeat(4, 1fr)" gridGap="4">
+      <Grid
+        templateColumns={["repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]}
+        gridGap="4"
+      >
         {map(
           (item) => (
             <Pattern
+              key={item.id}
               id={item.id}
               array={item.array}
               isOption={true}

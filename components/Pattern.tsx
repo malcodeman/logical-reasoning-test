@@ -11,7 +11,14 @@ type props = {
 };
 
 function Pattern(props: props) {
-  const { id, array, isOption = false, isSelected = false, onClick } = props;
+  const {
+    id,
+    array,
+    isOption = false,
+    isSelected = false,
+    onClick,
+    ...rest
+  } = props;
   const color = useColorModeValue("#000", "#fff");
   const optionColor = useColorModeValue(
     "var(--chakra-colors-gray-100)",
@@ -46,6 +53,7 @@ function Pattern(props: props) {
       backgroundColor={isOption ? optionColor : "transparent"}
       borderColor={getBorderColor()}
       onClick={handleOnClick}
+      {...rest}
     >
       {map((item) => {
         return map((patt) => {
@@ -55,12 +63,18 @@ function Pattern(props: props) {
                 borderWidth="2px"
                 borderStyle="solid"
                 borderColor={color}
-                height="20px"
-                width="20px"
+                height={["10px", "10px", "20px"]}
+                width={["10px", "10px", "20px"]}
               />
             );
           }
-          return <Circle backgroundColor={color} height="20px" width="20px" />;
+          return (
+            <Circle
+              backgroundColor={color}
+              height={["10px", "10px", "20px"]}
+              width={["10px", "10px", "20px"]}
+            />
+          );
         }, item);
       }, array)}
     </Grid>

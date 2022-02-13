@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <meta charSet="utf-8" />
           <meta name="og:description" content="logical reasoning test" />
-          <meta name="description" content="logical reasoning tes" />
+          <meta name="description" content="logical reasoning test" />
           <meta property="og:image" content="opengraph.png"></meta>
         </Head>
         <body>
