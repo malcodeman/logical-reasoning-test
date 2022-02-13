@@ -1,1 +1,22 @@
-# logical-reasoning-test
+# [logik](https://logik.surge.sh) 🤔
+
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/malcodeman/logik/blob/master/LICENSE)
+
+Platform for logical reasoning tests. Logical reasoning tests are a type of psychometric test used to measure your problem-solving skills
+
+![Screenshot](readme/screenshot.png)
+
+## Getting started
+
+```
+git clone https://github.com/malcodeman/logik.git
+cd logik
+yarn install && yarn dev
+```
+
+## License
+
+[MIT](./LICENSE)

@@ -1,5 +1,5 @@
 {
-  "name": "kattis",
+  "name": "logik",
   "private": true,
   "scripts": {
     "dev": "next dev",
