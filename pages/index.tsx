@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Center, Grid } from "@chakra-ui/layout";
-import { dec, inc } from "ramda";
+import { dec, equals, inc } from "ramda";
 
 import constants from "../lib/constants";
 
@@ -11,7 +11,7 @@ function Home() {
   const question = constants.TEST.questions[current];
 
   function handleOnNext(id: string) {
-    if (current === constants.TEST.questions.length - 1) {
+    if (equals(current, constants.TEST.questions.length - 1)) {
       alert("Finished");
     } else {
       setCurrent(inc(current));
