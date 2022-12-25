@@ -63,17 +63,12 @@ function Pattern(props: props) {
                 borderWidth="2px"
                 borderStyle="solid"
                 borderColor={color}
-                height={["10px", "10px", "20px"]}
-                width={["10px", "10px", "20px"]}
+                size={["10px", "10px", "20px"]}
               />
             );
           }
           return (
-            <Circle
-              backgroundColor={color}
-              height={["10px", "10px", "20px"]}
-              width={["10px", "10px", "20px"]}
-            />
+            <Circle backgroundColor={color} size={["10px", "10px", "20px"]} />
           );
         }, item);
       }, array)}
